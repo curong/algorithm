@@ -4,21 +4,24 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class E_2440 {
-
+public class E_2441 {
     public static void main(String[] args) throws IOException {
-        int N = Integer.parseInt(new BufferedReader(new InputStreamReader(System.in)).readLine());
+
+        int cnt = Integer.parseInt(new BufferedReader(new InputStreamReader(System.in)).readLine());
         StringBuilder sb = new StringBuilder();
 
-        for (int i = N; i > 0; i--) {
+        for (int line = cnt; line > 0; line--) {
 
-            for(int j = i; j > 0; j--) {
+            for (int space = cnt - line; space > 0; space--) {
+                sb.append(' ');
+            }
+
+            for (int star = line; star > 0; star--) {
                 sb.append('*');
             }
 
             sb.append('\n');
         }
         System.out.println(sb);
-
     }
 }
